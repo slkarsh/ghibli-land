@@ -1,8 +1,12 @@
 export const fetchFilms = async () => {
   const response = await fetch('https://ghibliapi.herokuapp.com/films')
   const data = await response.json()
-  console.log('films', data)
-  return data
+  // data.filter(movie => movie.director.includes("Miyazaki"))
+  const filtered = data.filter(movie => {
+    return movie.director.includes("Miyazaki")
+  })
+  console.log('films', filtered)
+  return filtered
 }
 
 export const fetchSpecies = async () => {
