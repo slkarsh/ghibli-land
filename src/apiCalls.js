@@ -3,10 +3,12 @@ export const fetchFilms = async () => {
   const data = await response.json()
   // data.filter(movie => movie.director.includes("Miyazaki"))
   const filtered = data.filter(movie => {
-    return movie.director.includes("Miyazaki")
+    return movie.director.includes("Hayao Miyazaki")
   })
   console.log('films', filtered)
   return filtered
+  // console.log('films', data)
+  // return data
 }
 
 export const fetchSpecies = async () => {
