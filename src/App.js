@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import { fetchFilms, fetchSpecies, fetchPeople, fetchLocations } from './apiCalls'
+import './App.scss';
+import { Route } from 'react-router-dom';
+import { fetchFilms, fetchSpirits, fetchSpecies, fetchPeople, fetchLocations } from './apiCalls'
 
 class App extends Component {
   constructor() {
@@ -14,9 +15,10 @@ class App extends Component {
   async componentDidMount() {
     try {
       await fetchFilms()
-      await fetchSpecies()
-      await fetchPeople()
-      await fetchLocations()
+      await fetchSpirits()
+      // await fetchSpecies()
+      // await fetchPeople()
+      // await fetchLocations()
     } catch (error) {
       console.log(error)
     }
