@@ -12,11 +12,13 @@ export const getPeople = () => {
   return fetch('https://ghibliapi.herokuapp.com/people')
     .then(res => res.json())
     .then(people => {
-      const personInfo = people.map(person => {
+      const personInfo = people.map(async person => {
         const { name, age, gender } = person
-        console.log("personnn", person)
-        const speciesInfo = fetchSpecies(person.species)
-        return Promise.all([name, age, gender, speciesInfo])
+        const speciesInfo = await fetchSpecies(person.species)
+        return {
+          ...person,
+          species: speciesInfo
+        }
         // return Promise.all(formattedInfo)
         // return formattedInfo
       })
@@ -24,6 +26,32 @@ export const getPeople = () => {
       // return personInfo
     })
 }
+
+
+//fetch('http:localhost:3001')
+// .then((response) => {
+//   return response.json();
+// })
+// .then(data => {
+//   // This is the tough part (dive into the details of this)
+//   const clues = data.clues;
+//   const cluesPromises = clues.map(clue => {
+//     return fetch(`http://localhost:3001${clue}`)
+//       .then(response => response.json())
+//   })
+
+//   return Promise.all(cluesPromises);
+// })
+// .then(clues => {
+//   const clueValues = clues.map(clue => clue.clue);
+//   const finalURL = clueValues.reverse().join('');
+  
+//   fetch(finalURL)
+//     .then(response => response.json())
+//     .then(data => console.log(data.message))
+// })
+// .catch(err => console.log('Error:', err));
+
 
 // export const getPeople = () => {
 //   return fetch('https://ghibliapi.herokuapp.com/people')
