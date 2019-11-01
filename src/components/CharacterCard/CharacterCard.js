@@ -1,13 +1,13 @@
 import React from 'react'
 
-export const CharacterCard = (character) => {
+export const CharacterCard = ({ name, age, gender, species }) => {
   return (
     <section className='character-card'>
-      <h3>Name: {character[0]}</h3>
-      <h4>Age: {character[1]}</h4>
-      <h4>Gender: {character[2]}</h4>
+      <h3>Name: {name}</h3>
+      <h4>Age: {age}</h4>
+      <h4>Gender: {gender}</h4>
       <p className='species-info'>
-        Species: {character[3]}
+        Species: {species}
       </p>
 
     </section>

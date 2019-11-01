@@ -11,3 +11,10 @@ export const setPeople = people => {
     people
   })
 }
+
+export const setPlaces = places => {
+  return ({
+    type: 'SET_PLACES',
+    places
+  })
+}
