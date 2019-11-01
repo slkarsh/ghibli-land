@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
-import { setMovies, setPeople, setPlaces } from '../../actions'
+import { setMovies, setPeople, setPlaces, setVehicles } from '../../actions'
 import { connect } from 'react-redux'
-import { fetchFilms, getPeople, fetchLocations } from '../../apiCalls'
+import { fetchFilms, getPeople, fetchLocations, fetchVehicles } from '../../apiCalls'
 import NavBar from '../NavBar/NavBar'
 import CharactersContainer from '../CharactersContainer/CharactersContainer'
 import PlacesContainer from '../PlacesContainer/PlacesContainer'
-// import MovieCard from '../MovieCard/MovieCard'
 import MovieContainer from '../MovieContainer/MovieContainer'
+import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
 
 
 class App extends Component {
@@ -20,21 +20,17 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const { setMovies, setPeople, setPlaces } = this.props
+    const { setMovies, setPeople, setPlaces, setVehicles } = this.props
     try {
       const movies = await fetchFilms()
       setMovies(movies)
       const peopleInfo = await getPeople()
-      // console.log('people fetch', peopleInfo)
       setPeople(peopleInfo)
       const places = await fetchLocations()
-      // console.log('places', places)
       setPlaces(places)
-      console.log('places', this.props.places)
-      // await fetchSpirits()
-      // await fetchSpecies()
-      // await fetchPeople()
-      // await fetchLocations()
+      const vehicles = await fetchVehicles()
+      setVehicles(vehicles)
+     
     } catch (error) {
       console.log(error)
     }
@@ -48,6 +44,7 @@ class App extends Component {
       <Route path='/movies' render={() => <MovieContainer />} />
       <Route path='/characters' render={() => <CharactersContainer />} />
       <Route path='/places' render={() => <PlacesContainer />} />
+      <Route path='/vehicles' render={() => <VehiclesContainer />} />
       
         {/* <Route exact path='/login' render={() => <LoginForm />} />
         <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
@@ -61,13 +58,15 @@ class App extends Component {
 const mapStateToProps = state => ({
   movies: state.movies,
   characters: state.characters,
-  places: state.places
+  places: state.places,
+  vehicles: state.vehicles
 })
 
 const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
   setPeople: people => dispatch( setPeople(people) ),
-  setPlaces: places => dispatch( setPlaces(places) )
+  setPlaces: places => dispatch( setPlaces(places) ),
+  setVehicles: vehicles => dispatch( setVehicles(vehicles) )
 })
 
 

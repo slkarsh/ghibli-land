@@ -4,7 +4,6 @@ export const fetchFilms = async () => {
   const filtered = data.filter(movie => {
     return movie.director.includes("Hayao Miyazaki")
   })
-  console.log('films', filtered)
   return filtered
 }
 
@@ -36,6 +35,12 @@ export const fetchLocations = async () => {
   const data = await response.json()
   console.log('locations', data)
   return data
+}
+
+export const fetchVehicles = async () => {
+  const response = await fetch('https://ghibliapi.herokuapp.com/vehicles')
+  const vehicles = await response.json()
+  return vehicles
 }
 
 

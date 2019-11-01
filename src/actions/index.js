@@ -18,3 +18,10 @@ export const setPlaces = places => {
     places
   })
 }
+
+export const setVehicles = vehicles => {
+  return ({
+    type: 'SET_VEHICLES',
+    vehicles
+  })
+}
