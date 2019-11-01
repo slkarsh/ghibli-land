@@ -4,3 +4,10 @@ export const setMovies = movies => {
     movies
   })
 }
+
+export const setPeople = people => {
+  return ({
+    type: 'SET_PEOPLE',
+    people
+  })
+}

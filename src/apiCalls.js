@@ -14,19 +14,53 @@ export const getPeople = () => {
     .then(people => {
       const personInfo = people.map(person => {
         const { name, age, gender } = person
+        console.log("personnn", person)
         const speciesInfo = fetchSpecies(person.species)
-        return Promise.all([name, age, gender, speciesInfo ])
+        return Promise.all([name, age, gender, speciesInfo])
+        // return Promise.all(formattedInfo)
+        // return formattedInfo
       })
       return Promise.all(personInfo)
+      // return personInfo
     })
-   
 }
+
+// export const getPeople = () => {
+//   return fetch('https://ghibliapi.herokuapp.com/people')
+//     .then(res => res.json())
+//     .then(people => {
+//       const personInfo = people.map(person => {
+//         const formatted = {}
+//         formatted['species'] = fetchSpecies(person.species)
+//         formatted['name'] = person.name
+//         formatted['age'] = person.age
+//         formatted['gender'] = person.gender
+//         console.log('formatted', formatted)
+//         return formatted
+//       })
+//       return Promise.all([personInfo])
+//     })
+// }
+
+// export const getPeople = () => {
+//   return fetch('https://ghibliapi.herokuapp.com/people')
+//     .then(res => res.json())
+//     .then(people => {
+//       const personInfo = people.map(person => {
+//         const { name, age, gender } = person
+//         const speciesInfo = fetchSpecies(person.species)
+//         // const { name } = species
+//         return Promise.all([name, age, gender, speciesInfo])
+//       })
+//       return Promise.all(personInfo)
+//     })
+// }
 
 export const fetchSpecies = async (speciesUrl) => {
   const response = await fetch(speciesUrl)
   const species = await response.json()
-  const { name, classification } = species
-  return { name, classification }
+  return species.name
+  // return name
 }
 
 export const fetchLocations = async () => {
@@ -37,17 +71,25 @@ export const fetchLocations = async () => {
 }
 
 
+// const fetchSpecies = speciesUrl => {
+//   return fetch(speciesUrl)
+//     .then(res => res.json())
+//     .then(species => {
+//       const { name, classification } = species
+//       return { name, classification }
+//     })
+// }
 
 
 // export const getCharacters = filmUrl => {
-//   return fetch(filmUrl)
-//     .then(response => response.json())
-//     .then(response => response.characters)
-//     .then(response => response.splice(0, 10))
-//     .then(film => {
-//       const characterInfo = film.map(character => {
-//         return getCharacter(character).then(character => ({
-//           name: character[0],
+  //   return fetch(filmUrl)
+  //     .then(response => response.json())
+  //     .then(response => response.characters)
+  //     .then(response => response.splice(0, 10))
+  //     .then(film => {
+    //       const characterInfo = film.map(character => {
+      //         return getCharacter(character).then(character => ({
+        //           name: character[0],
 //           homeworld: character[1],
 //           species: character[2],
 //           relatedFilms: character[3]

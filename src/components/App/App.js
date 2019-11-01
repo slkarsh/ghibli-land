@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
-import { setMovies } from '../../actions'
+import { setMovies, setPeople } from '../../actions'
 import { connect } from 'react-redux'
 import { fetchFilms, getPeople } from '../../apiCalls'
 import NavBar from '../NavBar/NavBar'
+import CharactersContainer from '../CharactersContainer/CharactersContainer'
 // import MovieCard from '../MovieCard/MovieCard'
 import MovieContainer from '../MovieContainer/MovieContainer'
 
@@ -24,6 +25,7 @@ class App extends Component {
       setMovies(movies)
       const peopleInfo = await getPeople()
       console.log('people fetch', peopleInfo)
+      setPeople(peopleInfo)
       // await fetchSpirits()
       // await fetchSpecies()
       // await fetchPeople()
@@ -39,7 +41,8 @@ class App extends Component {
       <h1>Hellooooo</h1>
       <NavBar />
       <Route path='/movies' render={() => <MovieContainer />} />
-      <Route path='/characters' render={() => <CharactersContainer />} />
+      {/* <Route exact path='/characters' render={() => <CharactersContainer />} /> */}
+      <CharactersContainer />
         {/* <Route exact path='/login' render={() => <LoginForm />} />
         <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
         <Route exact path='/favorites' render={() => <FavoritesContainer handleFavorite={this.handleFavorite} checkFavorites={this.checkFavorites} />} />
@@ -50,11 +53,13 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  movies: state.movies
+  movies: state.movies,
+  characters: state.characters
 })
 
 const mapDispatchToProps = dispatch => ({
-  setMovies: movies => dispatch( setMovies(movies) )
+  setMovies: movies => dispatch( setMovies(movies) ),
+  setPeople: people => dispatch( setPeople(people) )
 })
 
 
