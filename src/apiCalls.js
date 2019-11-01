@@ -8,25 +8,25 @@ export const fetchFilms = async () => {
   return filtered
 }
 
-export const fetchSpecies = async () => {
-  const response = await fetch('https://ghibliapi.herokuapp.com/species')
-  const data = await response.json()
-  console.log('species', data)
-  return data
+export const getPeople = () => {
+  return fetch('https://ghibliapi.herokuapp.com/people')
+    .then(res => res.json())
+    .then(people => {
+      const personInfo = people.map(person => {
+        const { name, age, gender } = person
+        const speciesInfo = fetchSpecies(person.species)
+        return Promise.all([name, age, gender, speciesInfo ])
+      })
+      return Promise.all(personInfo)
+    })
+   
 }
 
-export const fetchSpirits = async () => {
-  const response = await fetch('https://ghibliapi.herokuapp.com/species/74b7f547-1577-4430-806c-c358c8b6bcf5')
-  const spirit = await response.json()
-  console.log('spirit', spirit)
-  return spirit
-}
-
-export const fetchPeople = async (url) => {
-  const response = await fetch('url')
-  const data = await response.json()
-  console.log('people', data)
-  return data
+export const fetchSpecies = async (speciesUrl) => {
+  const response = await fetch(speciesUrl)
+  const species = await response.json()
+  const { name, classification } = species
+  return { name, classification }
 }
 
 export const fetchLocations = async () => {
@@ -36,18 +36,8 @@ export const fetchLocations = async () => {
   return data
 }
 
-export const getPersonNames = (personUrl) => {
-  return fetch(personUrl)
-    .then(res => res.json())
-    .then(person => person.name)
-}
 
-export const getPeopleNames = (peopleArray) => {
-  const peopleInfo = peopleArray.map(person => {
-    return getPersonNames(person)
-  })
-  return Promise.all(peopleInfo)
-}
+
 
 // export const getCharacters = filmUrl => {
 //   return fetch(filmUrl)
