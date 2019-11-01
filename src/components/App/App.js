@@ -23,6 +23,7 @@ class App extends Component {
     const { setMovies, setPeople, setPlaces, setVehicles } = this.props
     try {
       const movies = await fetchFilms()
+      console.log('movies', movies)
       setMovies(movies)
       const peopleInfo = await getPeople()
       setPeople(peopleInfo)
@@ -38,7 +39,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <section className='app-whole'>
       <h1>Hellooooo</h1>
       <NavBar />
       <Route path='/movies' render={() => <MovieContainer />} />
@@ -50,17 +51,17 @@ class App extends Component {
         <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
         <Route exact path='/favorites' render={() => <FavoritesContainer handleFavorite={this.handleFavorite} checkFavorites={this.checkFavorites} />} />
       {displayCards} */}
-    </>
+    </section>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  movies: state.movies,
-  characters: state.characters,
-  places: state.places,
-  vehicles: state.vehicles
-})
+// const mapStateToProps = state => ({
+//   movies: state.movies,
+//   characters: state.characters,
+//   places: state.places,
+//   vehicles: state.vehicles
+// })
 
 const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
@@ -71,4 +72,4 @@ const mapDispatchToProps = dispatch => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
