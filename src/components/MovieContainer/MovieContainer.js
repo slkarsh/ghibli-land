@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MovieCard from '../MovieCard/MovieCard'
+import './MovieContainer.scss'
 
 export const MovieContainer = ({ movies }) => {
   const display = movies.map((movie, index) => {
@@ -13,9 +14,9 @@ export const MovieContainer = ({ movies }) => {
   })
 
   return (
-    <section className='movie-container'>
+    <main className='movie-container'>
       {display}
-    </section>
+    </main>
   )
 }
 
