@@ -9,6 +9,7 @@ export const CharactersContainer = ({ characters }) => {
       <CharacterCard
         {...character}
         key={index}
+        className='character'
        />
     )
   })
