@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CharacterCard from '../CharacterCard/CharacterCard'
+import './CharactersContainer.scss'
 
 export const CharactersContainer = ({ characters }) => {
   const displayCards = characters.map((character, index) => {

@@ -1,4 +1,5 @@
 import React from 'react'
+import './VehicleCard.scss'
 
 export const VehicleCard = ({ name, description, vehicle_class }) => {
   return (

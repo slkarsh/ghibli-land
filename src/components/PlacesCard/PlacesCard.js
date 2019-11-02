@@ -1,4 +1,5 @@
 import React from 'react'
+import './PlacesCard.scss'
 
 export const PlacesCard = ({ climate, name, terrain }) => {
   return (

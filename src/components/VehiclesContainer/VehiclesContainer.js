@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import VehicleCard from '../VehicleCard/VehicleCard'
+import './VehiclesContainer.scss'
 
 export const VehiclesContainer = ( { vehicles } ) => {
   const displayVehicles = vehicles.map((vehicle, index) => {

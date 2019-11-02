@@ -1,4 +1,5 @@
 import React from 'react'
+import './CharacterCard.scss'
 
 export const CharacterCard = ({ name, age, gender, species }) => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PlacesCard from '../PlacesCard/PlacesCard'
+import './PlacesContainer.scss'
 
 export const PlacesContainer = ({ places }) => {
   const displayPlaces = places.map((place, index) => {
