@@ -9,8 +9,8 @@ const pics = {
   5:'https://image.tmdb.org/t/p/w1280/mNqZOtJIQfFQPjo3hmYLIn8Qqhf.jpg',
   6:'https://image.tmdb.org/t/p/w1280/oRvMaJOmapypFUcQqpgHMZA6qL9.jpg',
   7:'https://image.tmdb.org/t/p/w1280/iMarB2ior30OAXjPa7QIdeyUfM1.jpg',
-  8: 'https://image.tmdb.org/t/p/w1280/3s0mpSpLkI7cIhqWGrGbsiyvlsH.jpg',
-  9: 'https://image.tmdb.org/t/p/w1280/3OTcCyf7QbGdVxsS8GLtaSsTZtP.jpg'
+  8:'https://image.tmdb.org/t/p/w1280/3s0mpSpLkI7cIhqWGrGbsiyvlsH.jpg',
+  9:'https://image.tmdb.org/t/p/w1280/3OTcCyf7QbGdVxsS8GLtaSsTZtP.jpg'
 }
 
 export const MovieCard = ({ title, description, release_date, rt_score, setId}) => {

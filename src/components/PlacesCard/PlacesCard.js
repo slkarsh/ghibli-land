@@ -3,11 +3,13 @@ import './PlacesCard.scss'
 
 export const PlacesCard = ({ climate, name, terrain }) => {
   return (
-    <div className='places-card'>
-      <h3>Name: {name}</h3>
-      <h4>Climate: {climate}</h4>
-      <h4>Terrain: {terrain}</h4>
-    </div>
+    <section className='places-card'>
+      <h3 className='place-name'>Name: {name}</h3>
+      <div className='place-details'>
+        <h4>Climate: {climate}</h4>
+        <h4>Terrain: {terrain}</h4>
+      </div>
+    </section>
   )
 }
 
