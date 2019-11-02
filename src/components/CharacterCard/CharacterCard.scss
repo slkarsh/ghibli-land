@@ -5,19 +5,18 @@
 }
 
 .character-name {
-  padding: 18px;
-  border-right: 1px solid black;
-  font-size: 1.3em;
-  inline-size: min-content;
+  padding: 0px;
+  font-size: 1em;
 }
 
 .character-info {
   padding: 9px;
+  width: 25%;
 }
 
 .species-icon {
-  height: 30%;
-  width: 70%;
+  height: 25px;
+  width: 25px;
 }
 
 .character-id-info {
