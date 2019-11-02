@@ -25,3 +25,10 @@ export const setVehicles = vehicles => {
     vehicles
   })
 }
+
+export const addPlotCharacter = character => {
+  return ({
+    type: 'ADD_PLOT_CHARACTER',
+    character
+  })
+}

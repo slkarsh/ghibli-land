@@ -1,0 +1,7 @@
+.places-container {
+  display: grid;
+  grid-gap: 20px 15px;
+  padding: 20px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+  overflow: scroll;
+}

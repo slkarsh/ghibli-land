@@ -1,0 +1,16 @@
+.places-card {
+  border: 5px solid black;
+  display: flex;
+  width: 290px;
+}
+
+.place-name {
+  padding: 18px;
+  border-right: 1px solid black;
+  font-size: 1.3em;
+  inline-size: min-content;
+}
+
+.place-details {
+  padding: 9px;
+}
