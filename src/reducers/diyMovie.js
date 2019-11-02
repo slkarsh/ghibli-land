@@ -10,8 +10,8 @@ export const diyMovie = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_CHARACTER':
       return {
-        ...initialState,
-        characters: [action.character]
+        ...state,
+        characters: [...state.characters, action.character]
       }
     case 'REMOVE_CHARACTER': {
       const newCharacterState = state.characters.filter(character => {
