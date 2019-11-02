@@ -4,7 +4,13 @@ export const fetchFilms = async () => {
   const filtered = data.filter(movie => {
     return movie.director.includes("Hayao Miyazaki")
   })
-  return filtered
+  const updatedData = filtered.map((film, index) => {
+    const { title, description, release_date, rt_score } = film
+    const setId = index + 1
+    return { title, description, release_date, rt_score, setId } 
+  })
+  console.log('it worked', updatedData)
+  return updatedData
 }
 
 export const getPeople = () => {
