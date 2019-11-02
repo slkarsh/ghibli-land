@@ -5,6 +5,9 @@ import deer from '../../images/deer-small.png'
 import god from '../../images/god-small.png'
 import totoro from '../../images/totoro-small.png'
 import cat from '../../images/cat-small.png'
+import {IoIosStarOutline} from "react-icons/io";
+import { addCharacter } from '../../actions'
+import { connect } from 'react-redux'
 
 const icons = {
   Human: human,
@@ -14,7 +17,7 @@ const icons = {
   Cat: cat
 }
 
-export const CharacterCard = ({ name, age, gender, species }) => {
+export const CharacterCard = ({ name, age, gender, species, addCharacter }) => {
   return (
     <section className='character-card'>
       <div className='character-id-info'>
@@ -28,10 +31,19 @@ export const CharacterCard = ({ name, age, gender, species }) => {
         <p className='species-info'>
           Species: {species}
         </p>
+        <button onClick={() => addCharacter({ name, age, gender, species })}><IoIosStarOutline /></button>
       </div>
 
     </section>
   )
 }
 
-export default CharacterCard
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
+
+const mapDispatchToProps = dispatch => ({
+  addCharacter: character => dispatch( addCharacter(character) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterCard)
