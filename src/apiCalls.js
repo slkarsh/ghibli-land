@@ -39,8 +39,11 @@ export const fetchSpecies = async (speciesUrl) => {
 export const fetchLocations = async () => {
   const response = await fetch('https://ghibliapi.herokuapp.com/locations')
   const data = await response.json()
-  console.log('locations', data)
-  return data
+  const filteredData = data.filter(location => {
+    return location.climate !== 'TODO'
+  })
+  console.log('locations', filteredData)
+  return filteredData
 }
 
 export const fetchVehicles = async () => {
