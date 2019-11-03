@@ -9,15 +9,16 @@ import CharactersContainer from '../CharactersContainer/CharactersContainer'
 import PlacesContainer from '../PlacesContainer/PlacesContainer'
 import MovieContainer from '../MovieContainer/MovieContainer'
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
+import UserMovie from '../UserMovie/UserMovie'
 
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
+  // constructor() {
+  //   super()
+  //   this.state = {
 
-    }
-  }
+  //   }
+  // }
 
   async componentDidMount() {
     const { setMovies, setPeople, setPlaces, setVehicles } = this.props
@@ -76,6 +77,11 @@ class App extends Component {
       <Route path='/characters' render={() => <CharactersContainer checkCharacters={this.checkCharacters}  />} />
       <Route path='/places' render={() => <PlacesContainer checkPlaces={this.checkPlaces} />} />
       <Route path='/vehicles' render={() => <VehiclesContainer checkVehicles={this.checkVehicles} />} />
+      <Route path='/design' render={() => <UserMovie 
+        checkCharacters={this.checkCharacters} 
+        checkPlaces={this.checkPlaces} 
+        checkVehicles={this.checkVehicles} />} 
+      />
       
         {/* <Route exact path='/login' render={() => <LoginForm />} />
         <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
