@@ -4,7 +4,7 @@ import { toggleAddVehicle } from '../../actions'
 import { connect } from 'react-redux'
 import {IoIosStarOutline} from "react-icons/io";
 
-export const VehicleCard = ({ name, description, vehicle_class }) => {
+export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle }) => {
   return (
     <div className='vehicle-card'>
       <h3>Name: {name}</h3>

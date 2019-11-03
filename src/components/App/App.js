@@ -56,21 +56,9 @@ class App extends Component {
     return faveVehicle.includes(vehicleName)
   }
 
-  // handleAdd = (categoryType, featureObj) => {
-  //   const { diyMovie, addCharacter } = this.props
-  //   const isPresent = diyMovie[categoryType].find(category => {
-  //     return diyMovie[category].name === featureObj.name
-  //   })
-  //   if (!isPresent) {
-  //     addCharacter(featureObj) || addVehicle(featureObj) || addLocation(featureObj)
-  //   } else {
-  //     console.log('sara this did not work')
-  //   }
-  // }
-
   render() {
     return (
-      <section className='app-whole'>
+      <main className='app-whole'>
       <h1>Hellooooo</h1>
       <NavBar />
       <Route path='/movies' render={() => <MovieContainer />} />
@@ -82,12 +70,7 @@ class App extends Component {
         checkPlaces={this.checkPlaces} 
         checkVehicles={this.checkVehicles} />} 
       />
-      
-        {/* <Route exact path='/login' render={() => <LoginForm />} />
-        <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
-        <Route exact path='/favorites' render={() => <FavoritesContainer handleFavorite={this.handleFavorite} checkFavorites={this.checkFavorites} />} />
-      {displayCards} */}
-    </section>
+    </main>
     )
   }
 }

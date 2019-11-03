@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import VehicleCard from '../VehicleCard/VehicleCard'
 import PlacesCard from '../PlacesCard/PlacesCard'
+import { toggleAddCharacter, toggleAddLocation, toggleAddVehicle } from '../../actions'
 
 export const UserMovie = ({ diyMovie, checkCharacters, checkPlaces, checkVehicles }) => {
   const displayLocations = diyMovie.locations.map(location => {
@@ -57,4 +58,10 @@ const mapStateToProps = state => ({
   diyMovie: state.diyMovie
 })
 
-export default connect(mapStateToProps)(UserMovie)
+const mapDispatchToProps = dispatch => ({
+  toggleAddCharacter: character => dispatch( toggleAddCharacter(character) ),
+  toggleAddVehicle: vehicle => dispatch( toggleAddVehicle(vehicle) ),
+  toggleAddLocation: location => dispatch( toggleAddLocation(location) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMovie)
