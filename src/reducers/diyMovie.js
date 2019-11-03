@@ -40,10 +40,10 @@ export const diyMovie = (state = initialState, action) => {
       })
       return newVehicleState
     case 'TOGGLE_ADD_CHARACTER': 
-      const isPresent = state.characters.find(character => {
+      const existingCharacter = state.characters.find(character => {
         return character.name === action.character.name
       })
-      if (!isPresent) {
+      if (!existingCharacter) {
         return {
           ...state,
           characters: [...state.characters, action.character]
@@ -55,6 +55,42 @@ export const diyMovie = (state = initialState, action) => {
         return {
           ...state,
           characters: [...newCharacterState]
+        }
+      }
+    case 'TOGGLE_ADD_LOCATION': 
+      const existingLocation = state.locations.find(location => {
+        return location.name === action.location.name
+      })
+      if (!existingLocation) {
+        return {
+          ...state,
+          locations: [...state.locations, action.location]
+        }
+      } else {
+        const newLocationsState = state.locations.filter(location => {
+          return location.name !== action.location.name
+        })
+        return {
+          ...state,
+          locations: [...newLocationsState]
+        }
+      }
+    case 'TOGGLE_ADD_VEHICLE':
+      const existingVehicle = state.vehicles.find(vehicle => {
+        return vehicle.name === action.vehicle.name
+      })
+      if (!existingVehicle) {
+        return {
+          ...state,
+          vehicles: [...state.vehicles, action.vehicle]
+        }
+      } else {
+        const newVehiclesState = state.vehicles.filter(vehicle => {
+          return vehicle.name !== action.vehicle.name
+        })
+        return {
+          ...state,
+          vehicles: [...newVehiclesState]
         }
       }
     default:

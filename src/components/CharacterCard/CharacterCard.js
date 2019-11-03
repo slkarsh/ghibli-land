@@ -17,7 +17,7 @@ const icons = {
   Cat: cat
 }
 
-export const CharacterCard = ({ name, age, gender, species, addCharacter, handleAdd, toggleAddCharacter }) => {
+export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter }) => {
   return (
     <section className='character-card'>
       <div className='character-id-info'>
@@ -43,7 +43,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addCharacter: character => dispatch( addCharacter(character) ),
+  // addCharacter: character => dispatch( addCharacter(character) ),
   toggleAddCharacter: character => dispatch ( toggleAddCharacter(character) )
 })
 

@@ -74,3 +74,17 @@ export const toggleAddCharacter = character => {
     character
   })
 }
+
+export const toggleAddLocation = location => {
+  return ({
+    type: 'TOGGLE_ADD_LOCATION',
+    location
+  })
+}
+
+export const toggleAddVehicle = vehicle => {
+  return ({
+    type: 'TOGGLE_ADD_VEHICLE',
+    vehicle
+  })
+}
