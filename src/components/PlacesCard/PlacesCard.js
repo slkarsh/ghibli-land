@@ -10,7 +10,6 @@ import river from '../../images/waterfall.png'
 import ocean from '../../images/cyclone.png'
 import { toggleAddLocation } from '../../actions'
 import { connect } from 'react-redux'
-import {IoIosStarOutline} from "react-icons/io";
 
 
 
@@ -26,13 +25,14 @@ const placeIcons = {
   Ocean: ocean
 }
 
-export const PlacesCard = ({ climate, name, terrain, toggleAddLocation }) => {
+export const PlacesCard = ({ climate, name, terrain, toggleAddLocation, checkPlaces }) => {
+  const buttonHandler = checkPlaces(name) ? 'Remove From Your Plot' : 'Add To Your Plot'
   return (
     <section className='places-card'>
       <div className='place-header-info'>
         <h3 className='place-name'>{name}</h3>
         <img className='place-icon' src={placeIcons[terrain]} />
-        <button className='place-button' onClick={() => toggleAddLocation({ climate, name, terrain })}><IoIosStarOutline /></button>
+        <button className='place-button' onClick={() => toggleAddLocation({ climate, name, terrain })}>{buttonHandler}</button>
       </div>
       <div className='place-details'>
         <h4>Climate: {climate}</h4>
