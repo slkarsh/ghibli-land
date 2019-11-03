@@ -6,7 +6,6 @@ import './NavBar.scss'
 export const NavBar = () => {
   return (
   <nav className='nav-bar'>
-    <h1>Ghibli Land</h1>
     <ul className='ul-nav-list'>
       <Link to='/movies'>
         <li className='nav-list-item'>Movies</li>

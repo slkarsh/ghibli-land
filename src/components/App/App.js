@@ -59,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <main className='app-whole'>
-      <h1>Hellooooo</h1>
+      <h1>Ghibli Land!</h1>
       <NavBar />
       <Route path='/movies' render={() => <MovieContainer />} />
       <Route path='/characters' render={() => <CharactersContainer checkCharacters={this.checkCharacters}  />} />
