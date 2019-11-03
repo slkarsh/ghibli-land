@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import VehicleCard from '../VehicleCard/VehicleCard'
 import './VehiclesContainer.scss'
 
-export const VehiclesContainer = ( { vehicles } ) => {
+export const VehiclesContainer = ( { vehicles, checkVehicles } ) => {
   const displayVehicles = vehicles.map((vehicle, index) => {
     return (
       <VehicleCard 
         {...vehicle}
         key={index}
+        checkVehicles={checkVehicles}
       />
     )
   })
@@ -20,7 +21,7 @@ export const VehiclesContainer = ( { vehicles } ) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   vehicles: state.vehicles
 })
 
