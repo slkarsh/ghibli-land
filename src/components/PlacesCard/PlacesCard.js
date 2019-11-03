@@ -29,12 +29,14 @@ const placeIcons = {
 export const PlacesCard = ({ climate, name, terrain, toggleAddLocation }) => {
   return (
     <section className='places-card'>
-      <h3 className='place-name'>Name: {name}</h3>
+      <div className='place-header-info'>
+        <h3 className='place-name'>{name}</h3>
+        <img className='place-icon' src={placeIcons[terrain]} />
+        <button onClick={() => toggleAddLocation({ climate, name, terrain })}><IoIosStarOutline /></button>
+      </div>
       <div className='place-details'>
         <h4>Climate: {climate}</h4>
         <h4>Terrain: {terrain}</h4>
-        <img src={placeIcons[terrain]} />
-        <button onClick={() => toggleAddLocation({ climate, name, terrain })}><IoIosStarOutline /></button>
       </div>
     </section>
   )

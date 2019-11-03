@@ -5,7 +5,6 @@ import deer from '../../images/deer-small.png'
 import god from '../../images/god-small.png'
 import totoro from '../../images/totoro-small.png'
 import cat from '../../images/cat-small.png'
-import {IoIosStarOutline} from "react-icons/io";
 import { toggleAddCharacter } from '../../actions'
 import { connect } from 'react-redux'
 
@@ -25,6 +24,7 @@ export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, 
         <h3 className='character-name'>{name}</h3>
         <br />
         <img className='species-icon' src={icons[species]}/>
+        <button className='character-button' onClick={() => toggleAddCharacter({ name, age, gender, species })}>{buttonHandler}</button>
       </div>
       <div className='character-info'>
         <h4>Age: {age}</h4>
@@ -32,7 +32,6 @@ export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, 
         <p className='species-info'>
           Species: {species}
         </p>
-        <button onClick={() => toggleAddCharacter({ name, age, gender, species })}>{buttonHandler}</button>
       </div>
 
     </section>
@@ -44,7 +43,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // addCharacter: character => dispatch( addCharacter(character) ),
   toggleAddCharacter: character => dispatch ( toggleAddCharacter(character) )
 })
 
