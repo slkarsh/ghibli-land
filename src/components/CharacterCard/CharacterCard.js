@@ -22,13 +22,12 @@ export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, 
     <section className='character-card'>
       <div className='character-id-info'>
         <h3 className='character-name'>{name}</h3>
-        <br />
         <img className='species-icon' src={icons[species]}/>
         <button className='character-button' onClick={() => toggleAddCharacter({ name, age, gender, species })}>{buttonHandler}</button>
       </div>
       <div className='character-info'>
-        <h4>Age: {age}</h4>
-        <h4>Gender: {gender}</h4>
+        <h5>Age: {age}</h5>
+        <h5>Gender: {gender}</h5>
         <p className='species-info'>
           Species: {species}
         </p>
