@@ -22,7 +22,7 @@ export const CharactersContainer = ({ characters, checkCharacters }) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   characters: state.characters
 })
 

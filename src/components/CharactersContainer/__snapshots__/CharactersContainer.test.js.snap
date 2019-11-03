@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharactersContainer CharactersContainer component should match the snapshot 1`] = `
+<section
+  className="character-container"
+>
+  <Connect(CharacterCard)
+    age={65}
+    checkCharacters={[MockFunction]}
+    className="character"
+    gender="male"
+    key="0"
+    name="bob ross"
+    species="human"
+  />
+  <Connect(CharacterCard)
+    age={1.5}
+    checkCharacters={[MockFunction]}
+    className="character"
+    gender="male"
+    key="1"
+    name="oliver"
+    species="dog"
+  />
+</section>
+`;

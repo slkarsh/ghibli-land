@@ -2,9 +2,6 @@ import { MovieContainer, mapStateToProps } from './MovieContainer';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-
-
-
 describe('MovieContainer', () => {
   describe('MovieContainer component', () => {
     let wrapper;
