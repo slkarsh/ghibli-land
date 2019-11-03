@@ -42,8 +42,12 @@ export const PlacesCard = ({ climate, name, terrain, toggleAddLocation, checkPla
   )
 }
 
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
+
 const mapDispatchToProps = dispatch => ({
   toggleAddLocation: location => dispatch( toggleAddLocation(location))
 })
 
-export default connect(null, mapDispatchToProps)(PlacesCard)
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesCard)
