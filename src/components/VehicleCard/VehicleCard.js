@@ -4,9 +4,17 @@ import { toggleAddVehicle } from '../../actions'
 import { connect } from 'react-redux'
 import {IoIosStarOutline} from "react-icons/io";
 
-export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle }) => {
+const images = {
+  Airship: 'https://steamuserimages-a.akamaihd.net/ugc/800921761784638066/E000FAC38E199977DA4A399F9DCEAE53C4134D14/',
+  Airplane: 'http://4.bp.blogspot.com/-9LYF-rZrRkE/TbQPOOPWumI/AAAAAAAAAAM/gHcCg6K0KxA/s1600/porco_rosso_movie_image_01.jpg',
+  Boat: 'https://vignette.wikia.nocookie.net/studio-ghibli/images/b/b7/Sosuke_in_boat.png/revision/latest?cb=20181024030411'
+
+}
+
+export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle, index }) => {
   return (
     <div className='vehicle-card'>
+      <img src={images[vehicle_class]} />
       <h3>Name: {name}</h3>
       <h4>Vehicle Class: {vehicle_class}</h4>
       <p className='vehicle-description'>{description}</p>
