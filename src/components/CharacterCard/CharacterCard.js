@@ -6,7 +6,7 @@ import god from '../../images/god-small.png'
 import totoro from '../../images/totoro-small.png'
 import cat from '../../images/cat-small.png'
 import {IoIosStarOutline} from "react-icons/io";
-import { addCharacter, toggleAddCharacter } from '../../actions'
+import { toggleAddCharacter } from '../../actions'
 import { connect } from 'react-redux'
 
 const icons = {
@@ -17,7 +17,8 @@ const icons = {
   Cat: cat
 }
 
-export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter }) => {
+export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, checkCharacters }) => {
+  const buttonHandler = checkCharacters(name) ? 'Remove From Your Cast' : 'Add To Your Cast'
   return (
     <section className='character-card'>
       <div className='character-id-info'>
@@ -31,7 +32,7 @@ export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter }
         <p className='species-info'>
           Species: {species}
         </p>
-        <button onClick={() => toggleAddCharacter({ name, age, gender, species })}><IoIosStarOutline /></button>
+        <button onClick={() => toggleAddCharacter({ name, age, gender, species })}>{buttonHandler}</button>
       </div>
 
     </section>

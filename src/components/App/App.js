@@ -37,17 +37,35 @@ class App extends Component {
     }
   }
 
-  handleAdd = (categoryType, featureObj) => {
-    const { diyMovie, addCharacter } = this.props
-    const isPresent = diyMovie[categoryType].find(category => {
-      return diyMovie[category].name === featureObj.name
-    })
-    if (!isPresent) {
-      addCharacter(featureObj) || addVehicle(featureObj) || addLocation(featureObj)
-    } else {
-      console.log('sara this did not work')
-    }
+  checkCharacters = (charName) => {
+    const { diyMovie } = this.props
+    let faveCharacter = diyMovie.characters.map(character => character.name)
+    return faveCharacter.includes(charName)
   }
+
+  checkPlaces = placeName => {
+    const { diyMovie } = this.props
+    let favePlace = diyMovie.locations.map(location => location.name)
+    return favePlace.includes(placeName)
+  }
+
+  checkVehicles = vehicleName => {
+    const { diyMovie } = this.props
+    let faveVehicle = diyMovie.vehicles.map(vehicle => vehicle.name)
+    return faveVehicle.includes(vehicleName)
+  }
+
+  // handleAdd = (categoryType, featureObj) => {
+  //   const { diyMovie, addCharacter } = this.props
+  //   const isPresent = diyMovie[categoryType].find(category => {
+  //     return diyMovie[category].name === featureObj.name
+  //   })
+  //   if (!isPresent) {
+  //     addCharacter(featureObj) || addVehicle(featureObj) || addLocation(featureObj)
+  //   } else {
+  //     console.log('sara this did not work')
+  //   }
+  // }
 
   render() {
     return (
@@ -55,9 +73,9 @@ class App extends Component {
       <h1>Hellooooo</h1>
       <NavBar />
       <Route path='/movies' render={() => <MovieContainer />} />
-      <Route path='/characters' render={() => <CharactersContainer handleAdd={this.handleAdd} />} />
-      <Route path='/places' render={() => <PlacesContainer />} />
-      <Route path='/vehicles' render={() => <VehiclesContainer />} />
+      <Route path='/characters' render={() => <CharactersContainer checkCharacters={this.checkCharacters}  />} />
+      <Route path='/places' render={() => <PlacesContainer checkPlaces={this.checkPlaces} />} />
+      <Route path='/vehicles' render={() => <VehiclesContainer checkVehicles={this.checkVehicles} />} />
       
         {/* <Route exact path='/login' render={() => <LoginForm />} />
         <Route exact path='/movie/:id' render={({ match }) => <MovieInfo id={match.params} />} />
@@ -76,10 +94,7 @@ const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
   setPeople: people => dispatch( setPeople(people) ),
   setPlaces: places => dispatch( setPlaces(places) ),
-  setVehicles: vehicles => dispatch( setVehicles(vehicles) ),
-  addCharacter : character => dispatch ( addCharacter(character) ),
-  addVehicle: vehicle => dispatch( addVehicle(vehicle) ),
-  addLocation: location => dispatch( addLocation(location) )
+  setVehicles: vehicles => dispatch( setVehicles(vehicles) )
 })
 
 
