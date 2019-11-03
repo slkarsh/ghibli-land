@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacesContainer PlacesContainer component should match the snapshot 1`] = `
+<section
+  className="places-container"
+>
+  <Connect(PlacesCard)
+    checkPlaces={[MockFunction]}
+    climate="cold"
+    key="0"
+    name="the moon"
+    terrain="rocky"
+  />
+  <Connect(PlacesCard)
+    checkPlaces={[MockFunction]}
+    climate="variable"
+    key="1"
+    name="the earth"
+    terrain="earthy"
+  />
+</section>
+`;
