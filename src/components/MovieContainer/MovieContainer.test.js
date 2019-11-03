@@ -32,38 +32,64 @@ describe('MovieContainer', () => {
       expect(wrapper).toMatchSnapshot();
     })
   })
+  describe('mapStateToProps', () => {
+    it('should return an object with the movies array', () => {
+      const mockState = {
+        movies: [
+          {
+            title: 'another film',
+            description: 'it did not win an oscar',
+            release_date: '2001',
+            rt_score: 2
+          },
+          {
+            title: 'a short film',
+            description: 'shockingly didnt win any awards',
+            release_date: '1776',
+            rt_score: 5
+          }
+        ],
+        characters: [
+          {
+            name: 'tom',
+            gender: 'male',
+            species: 'cat'
+          },
+          {
+            name: 'jerry',
+            gender: 'male',
+            species: 'mouse'
+          }
+        ]
+      }
+      const expectedState = {
+        movies: [
+          {
+            title: 'another film',
+            description: 'it did not win an oscar',
+            release_date: '2001',
+            rt_score: 2
+          },
+          {
+            title: 'a short film',
+            description: 'shockingly didnt win any awards',
+            release_date: '1776',
+            rt_score: 5
+          }
+        ]
+      }
+      const mappedProps = mapStateToProps(mockState)
+
+      expect(mappedProps).toEqual(expectedState)
+    })
+  })
 })
 
 
 
 
-//     it('should match a snapshot', () => {
-//       expect(wrapper).toMatchSnapshot();
-//     });
 
-//     it('should render an error message', () => {
-//       wrapper = shallow(<MovieContainer
-//         movies={[{
-//           title: 'Wicked',
-//           release_date: '2017',
-//           average_rating: 6.5,
-//           popularity: 55.55,
-//           id: 5
-//         },
-//         {
-//           title: 'Joker',
-//           release_date: '2019',
-//           average_rating: 7.5,
-//           popularity: 68.55,
-//           id: 6
-//         }]}
-//         errorMsg='This is an error'
-//         handleFavorite={mockHandleFavorite}
-//       />)
 
-//       expect(wrapper).toMatchSnapshot();
-//     });
-//   });
 
 //   describe('mapStateToProps', () => {
 //     it('should return an object with the todos array', () => {
