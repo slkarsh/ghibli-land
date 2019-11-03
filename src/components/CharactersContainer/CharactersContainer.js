@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import './CharactersContainer.scss'
 
-export const CharactersContainer = ({ characters }) => {
+export const CharactersContainer = ({ characters, handleAdd }) => {
   const displayCards = characters.map((character, index) => {
     return (
       <CharacterCard
         {...character}
         key={index}
         className='character'
+        handleAdd={handleAdd}
        />
     )
   })

@@ -67,3 +67,10 @@ export const removeVehicle = vehicle => {
     vehicle
   })
 }
+
+export const toggleAddCharacter = character => {
+  return ({
+    type: 'TOGGLE_ADD_CHARACTER',
+    character
+  })
+}

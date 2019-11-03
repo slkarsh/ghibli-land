@@ -21,7 +21,8 @@ export const diyMovie = (state = initialState, action) => {
     }
     case 'ADD_LOCATION':
       return {
-        locations: action.location
+        ...state,
+        locations: [...state.locations, action.location]
       }
     case 'REMOVE_LOCATION': 
       const newLocationState = state.locations.filter(location => {
@@ -30,13 +31,32 @@ export const diyMovie = (state = initialState, action) => {
       return newLocationState
     case 'ADD_VEHICLE':
       return {
-        vehicles: action.vehicle
+        ...state,
+        vehicles: [...state.vehicles,action.vehicle]
       }
     case 'REMOVE_VEHICLE':
       const newVehicleState = state.vehicles.filter(vehicle => {
         return vehicle.name !== action.vehicle.name
       })
       return newVehicleState
+    case 'TOGGLE_ADD_CHARACTER': 
+      const isPresent = state.characters.find(character => {
+        return character.name === action.character.name
+      })
+      if (!isPresent) {
+        return {
+          ...state,
+          characters: [...state.characters, action.character]
+        }
+      } else {
+        const newCharacterState = state.characters.filter(character => {
+          return character.name !== action.character.name
+        })
+        return {
+          ...state,
+          characters: [...newCharacterState]
+        }
+      }
     default:
       return state
   }
