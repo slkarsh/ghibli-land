@@ -11,6 +11,7 @@ import MovieContainer from '../MovieContainer/MovieContainer'
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
 import UserMovie from '../UserMovie/UserMovie'
 import HomeContainer from '../HomeContainer/HomeContainer'
+import PropTypes from 'prop-types'
 
 
 class App extends Component {
@@ -71,7 +72,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-diyMovie: state.diyMovie
+  diyMovie: state.diyMovie
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -84,3 +85,14 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  checkCharacters: PropTypes.func,
+  checkPlaces: PropTypes.func,
+  checkVehicles: PropTypes.func,
+  diyMovie: PropTypes.object,
+  setMovies: PropTypes.func,
+  setPeople: PropTypes.func,
+  setPlaces: PropTypes.func,
+  setVehicles: PropTypes.func
+}
