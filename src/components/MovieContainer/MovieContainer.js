@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MovieCard from '../MovieCard/MovieCard'
 import './MovieContainer.scss'
+import PropTypes from 'prop-types'
 
 export const MovieContainer = ({ movies }) => {
   const display = movies.map((movie, index) => {
@@ -25,3 +26,7 @@ export const MovieContainer = ({ movies }) => {
 })
 
 export default connect(mapStateToProps)(MovieContainer)
+
+MovieContainer.propTypes = {
+  movies: PropTypes.array
+}

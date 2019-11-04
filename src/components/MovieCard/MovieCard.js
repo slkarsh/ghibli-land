@@ -1,5 +1,6 @@
 import React from 'react'
 import './MovieCard.scss'
+import PropTypes from 'prop-types'
 
 const pics = {
   1:'https://image.tmdb.org/t/p/w1280/4RTG2AaqZ9eleL51ryWwv78WwDu.jpg',
@@ -30,3 +31,11 @@ export const MovieCard = ({ title, description, release_date, rt_score, setId}) 
 }
 
 export default MovieCard
+
+MovieCard.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  release_date: PropTypes.string,
+  rt_score: PropTypes.number,
+  setId: PropTypes.number
+}
