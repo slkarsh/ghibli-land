@@ -14,7 +14,7 @@ import HomeContainer from '../HomeContainer/HomeContainer'
 import PropTypes from 'prop-types'
 
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     const { setMovies, setPeople, setPlaces, setVehicles } = this.props
@@ -71,11 +71,11 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   diyMovie: state.diyMovie
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
   setPeople: people => dispatch( setPeople(people) ),
   setPlaces: places => dispatch( setPlaces(places) ),

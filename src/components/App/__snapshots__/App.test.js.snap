@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App component should match the snapshot 1`] = `
+<main
+  className="app-whole"
+>
+  <h1
+    className="app-header"
+  >
+    Ghibli Land!
+  </h1>
+  <NavBar />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    path="/movies"
+    render={[Function]}
+  />
+  <Route
+    path="/characters"
+    render={[Function]}
+  />
+  <Route
+    path="/places"
+    render={[Function]}
+  />
+  <Route
+    path="/vehicles"
+    render={[Function]}
+  />
+  <Route
+    path="/design"
+    render={[Function]}
+  />
+</main>
+`;
