@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
-import { setMovies, setPeople, setPlaces, setVehicles, addCharacter, addLocation, addVehicle } from '../../actions'
+import { setMovies, setPeople, setPlaces, setVehicles, hasErrored } from '../../actions'
 import { connect } from 'react-redux'
 import { fetchFilms, getPeople, fetchLocations, fetchVehicles } from '../../apiCalls'
-import NavBar from '../NavBar/NavBar'
+import NavBar from '../../components/NavBar/NavBar'
 import CharactersContainer from '../CharactersContainer/CharactersContainer'
 import PlacesContainer from '../PlacesContainer/PlacesContainer'
 import MovieContainer from '../MovieContainer/MovieContainer'
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
 import UserMovie from '../UserMovie/UserMovie'
-import HomeContainer from '../HomeContainer/HomeContainer'
+import HomeContainer from '../../components/HomeContainer/HomeContainer'
 import PropTypes from 'prop-types'
 
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     const { setMovies, setPeople, setPlaces, setVehicles } = this.props
@@ -29,7 +29,7 @@ class App extends Component {
       setVehicles(vehicles)
      
     } catch (error) {
-      console.log(error)
+      hasErrored(error.message)
     }
   }
 
@@ -71,15 +71,17 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  diyMovie: state.diyMovie
+export const mapStateToProps = state => ({
+  diyMovie: state.diyMovie,
+  error: state.error
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
   setPeople: people => dispatch( setPeople(people) ),
   setPlaces: places => dispatch( setPlaces(places) ),
-  setVehicles: vehicles => dispatch( setVehicles(vehicles) )
+  setVehicles: vehicles => dispatch( setVehicles(vehicles) ),
+  hasErrored: error => dispatch( hasErrored(error) )
 })
 
 
@@ -94,5 +96,6 @@ App.propTypes = {
   setMovies: PropTypes.func,
   setPeople: PropTypes.func,
   setPlaces: PropTypes.func,
-  setVehicles: PropTypes.func
+  setVehicles: PropTypes.func,
+  hasErrored: PropTypes.func
 }

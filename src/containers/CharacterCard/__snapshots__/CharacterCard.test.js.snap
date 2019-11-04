@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard should match the snapshot 1`] = `
+<section
+  className="character-card"
+>
+  <div
+    className="character-id-info"
+  >
+    <h3
+      className="character-name"
+    >
+      Sara
+    </h3>
+    <img
+      className="species-icon"
+    />
+    <button
+      className="character-button"
+      onClick={[Function]}
+    >
+      Add To Your Cast
+    </button>
+  </div>
+  <div
+    className="character-info"
+  >
+    <h5>
+      Age: 
+      27
+    </h5>
+    <h5>
+      Gender: 
+      female
+    </h5>
+    <p
+      className="species-info"
+    >
+      Species: 
+      human
+    </p>
+  </div>
+</section>
+`;

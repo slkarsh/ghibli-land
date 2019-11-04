@@ -38,21 +38,21 @@ export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, 
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   diyMovie: state.diyMovie
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   toggleAddCharacter: character => dispatch ( toggleAddCharacter(character) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterCard)
 
 CharacterCard.propTypes = {
-  diyMovie: PropTypes.obj,
+  diyMovie: PropTypes.object,
   toggleAddCharacter: PropTypes.func,
   name: PropTypes.string,
-  age: PropTypes.number,
+  age: PropTypes.string,
   gender: PropTypes.string,
   species: PropTypes.string,
   checkCharacters: PropTypes.func,

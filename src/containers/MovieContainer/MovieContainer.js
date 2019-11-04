@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import MovieCard from '../MovieCard/MovieCard'
+import MovieCard from '../../components/MovieCard/MovieCard'
 import './MovieContainer.scss'
 import PropTypes from 'prop-types'
 

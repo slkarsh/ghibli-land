@@ -4,6 +4,7 @@ import { characters } from './characters'
 import { places } from './places'
 import { vehicles } from './vehicles'
 import { diyMovie } from './diyMovie'
+import { error } from './error'
 
 
 export const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ export const rootReducer = combineReducers({
   characters,
   places,
   vehicles,
-  diyMovie
+  diyMovie,
+  error
 })
 
 export default rootReducer

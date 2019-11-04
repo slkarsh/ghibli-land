@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { addTitleAndPlot } from '../../actions'
 import PropTypes from 'prop-types'
 
-class UserForm extends Component {
+export class UserForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,6 +15,7 @@ class UserForm extends Component {
   }
   
   handleChange = e => {
+    e.preventDefault()
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -27,17 +28,15 @@ class UserForm extends Component {
     if (title === '' || plot === '' || diyMovie.characters.length === 0 || diyMovie.locations.length === 0 || diyMovie.vehicles.length === 0) {
       e.preventDefault()
       this.setState({score: 0})
-      console.log('0', this.state.score)
     }
     else {
-      console.log('helloooo')
       this.getScore()
       addTitleAndPlot(this.state)
+      this.clearInputs()
     }
   }
 
   getScore = () => {
-    console.log('get score was called')
     let randomScore =  Math.floor((Math.random() * 50))
     console.log('random score', randomScore)
     this.setState({score: randomScore})
@@ -81,11 +80,11 @@ class UserForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   diyMovie: state.diyMovie
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addTitleAndPlot: (inputInfo) => dispatch(addTitleAndPlot(inputInfo))
 })
 
@@ -94,7 +93,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserForm)
 UserForm.propTypes = {
   title: PropTypes.string,
   plot: PropTypes.string,
-  score: PropTypes.null,
   diyMovie: PropTypes.object,
   addTitleAndPlot: PropTypes.func,
   submitForm: PropTypes.func,

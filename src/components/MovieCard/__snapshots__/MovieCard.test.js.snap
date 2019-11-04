@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match the snapshot 1`] = `
+<section
+  className="movie-card"
+>
+  <img
+    alt="movie poster"
+    className="poster-image"
+    src="https://image.tmdb.org/t/p/w1280/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg"
+  />
+  <h3>
+    a film
+  </h3>
+  <p
+    className="description"
+  >
+    a plot
+  </p>
+  <p
+    className="date"
+  >
+    Released in: 
+    2001
+  </p>
+  <p
+    className="score"
+  >
+    Rotten Tomatoes: 
+    89
+    %
+  </p>
+</section>
+`;

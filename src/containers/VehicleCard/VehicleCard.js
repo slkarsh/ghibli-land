@@ -24,11 +24,11 @@ export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   diyMovie: state.diyMovie
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   toggleAddVehicle: vehicle => dispatch( toggleAddVehicle(vehicle) )
 })
 

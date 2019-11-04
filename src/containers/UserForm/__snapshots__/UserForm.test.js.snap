@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserForm should match the snapshot 1`] = `
+<section
+  className="form-section"
+>
+  <form
+    className="user-form"
+  >
+    <input
+      className="title-input"
+      name="title"
+      onChange={[Function]}
+      placeholder="Name your movie"
+      value=""
+    />
+    <textarea
+      className="plot-input"
+      columns="100"
+      name="plot"
+      onChange={[Function]}
+      placeholder="Describe the plot"
+      rows="30"
+      value=""
+    />
+  </form>
+  <button
+    className="submit-button"
+    onClick={[Function]}
+  >
+    See Your Rotten Tomatoes Score!
+  </button>
+  <div
+    className="movie-score"
+  >
+    Make sure you have added all the information to make a film!
+  </div>
+</section>
+`;
