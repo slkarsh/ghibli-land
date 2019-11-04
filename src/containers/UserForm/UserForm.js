@@ -10,7 +10,7 @@ export class UserForm extends Component {
     this.state = {
       title: '',
       plot: '',
-      score: null
+      score: 0
     }
   }
   
@@ -32,7 +32,7 @@ export class UserForm extends Component {
     else {
       this.getScore()
       addTitleAndPlot(this.state)
-      this.clearInputs()
+      // this.clearInputs()
     }
   }
 
@@ -40,6 +40,7 @@ export class UserForm extends Component {
     let randomScore =  Math.floor((Math.random() * 50))
     console.log('random score', randomScore)
     this.setState({score: randomScore})
+    console.log('score', this.state.score)
     return randomScore
   }
 
@@ -47,7 +48,7 @@ export class UserForm extends Component {
     this.setState({
       title: '',
       plot: '',
-      score: null
+      score: 0
     })
   }
 
@@ -73,8 +74,8 @@ export class UserForm extends Component {
            />
         </form>
         <button className='submit-button' onClick={(e) => this.submitForm(e)}>See Your Rotten Tomatoes Score!</button>
-        {this.state.score && <div className='movie-score'>{this.state.score}</div>}
-        {!this.state.score && <div className='movie-score'>Make sure you have added all the information to make a film!</div>}
+        {this.state.score !== 0 && <div className='movie-score'>{this.state.score}</div>}
+        {this.state.score === 0 && <div className='movie-score'>Make sure you have added all the information to make a film!</div>}
       </section>
     )
   }
