@@ -24,7 +24,7 @@ export class UserForm extends Component {
   submitForm = e => {
     const { title, plot } = this.state
     const { diyMovie, addTitleAndPlot } = this.props
-    console.log('made it to submit form')
+   
     if (title === '' || plot === '' || diyMovie.characters.length === 0 || diyMovie.locations.length === 0 || diyMovie.vehicles.length === 0) {
       e.preventDefault()
       this.setState({score: 0})
@@ -38,9 +38,9 @@ export class UserForm extends Component {
 
   getScore = () => {
     let randomScore =  Math.floor((Math.random() * 50))
-    console.log('random score', randomScore)
+    
     this.setState({score: randomScore})
-    console.log('score', this.state.score)
+   
     return randomScore
   }
 
