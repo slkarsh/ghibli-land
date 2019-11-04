@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ghibli Land
+By:
+[Sara Karsh](https://github.com/slkarsh)
 
-## Available Scripts
+## Table of Contents
+* [Built With](#Built-With) 
+* [Screenshots](#Screenshots)
+* [Features](#Features)
+* [Try It Out](#Try-It-Out)
+* [Take It For A Spin](#Take-It-For-A-Spin)
+* [Why?](Why?)
 
-In the project directory, you can run:
+## Built With
+- React Router
+- JavaScript
+- Redux
+- HTML5
+- CSS3
+- TDD (Jest, Enzyme)
+- Fetch API - https://ghibliapi.herokuapp.com/
+## Screenshots
+<img width="1405" alt="Screen Shot 2019-11-04 at 3 56 40 PM" src="https://user-images.githubusercontent.com/46407593/68165105-bd801b00-ff1b-11e9-9da3-1f1bb1d963cd.png">
 
-### `npm start`
+<img width="1412" alt="Screen Shot 2019-11-04 at 3 42 01 PM" src="https://user-images.githubusercontent.com/46407593/68164983-7134db00-ff1b-11e9-94c6-ca2ec2fdea3e.png">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img width="1417" alt="Screen Shot 2019-11-04 at 3 41 41 PM" src="https://user-images.githubusercontent.com/46407593/68165010-84e04180-ff1b-11e9-8054-3caaf02bd906.png">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<img width="1417" alt="Screen Shot 2019-11-04 at 3 36 11 PM" src="https://user-images.githubusercontent.com/46407593/68165042-9590b780-ff1b-11e9-8484-7818d087aef4.png">
 
-### `npm test`
+## Features
+- [x] Built on React
+- [x] React Router
+- [x] Fetch
+- [x] Nested Fetch
+- [x] Added characters, locations, and vehicles persist across the application until reload
+## Try It Out
+- [x] Check out the amazing films directed by Hayao Miyazaki of Studio Ghibli
+- [X] Get to know the myriad of characters, settings, and vehicles of the Studio Ghibli universe
+- [X] Use your imagination to create your own dream Ghibli-esque movie with your favorite characters, settings, and vehicles. Add them as you browse.
+- [X] Come up with a title and plot for your movie and get a Rotten Tomatoes score
+## Take It For A Spin
+- `git clone` this repository
+- `cd` into the appropriate directory
+- run `npm i` to install your dependencies
+- run `npm start` to see it in action
+## Why?
+Ghibli Land allows a user familiar with the films of Hayao Miyazaki to explore and let their imagination run wild. Ever thought about what Spirited Away would look like in the forest from Princess Mononoke? Me too. Play around with the characters, settings, and more, and then see if you can beat the Rotten Tomatoes scores of any of these famous films (hint, you probably won't ;))
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
