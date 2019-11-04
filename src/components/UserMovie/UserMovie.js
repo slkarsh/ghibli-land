@@ -6,6 +6,7 @@ import VehicleCard from '../VehicleCard/VehicleCard'
 import PlacesCard from '../PlacesCard/PlacesCard'
 import { toggleAddCharacter, toggleAddLocation, toggleAddVehicle } from '../../actions'
 import './UserMovie.scss'
+import PropTypes from 'prop-types'
 
 export const UserMovie = ({ diyMovie, checkCharacters, checkPlaces, checkVehicles }) => {
   const displayLocations = diyMovie.locations.map(location => {
@@ -70,3 +71,13 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserMovie)
+
+UserMovie.propTypes = {
+  diyMovie: PropTypes.object,
+  toggleAddLocation: PropTypes.func,
+  toggleAddCharacter: PropTypes.func,
+  toggleAddVehicle: PropTypes.func,
+  checkCharacters: PropTypes.func,
+  checkPlaces: PropTypes.func,
+  checkVehicles: PropTypes.func
+}

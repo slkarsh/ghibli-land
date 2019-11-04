@@ -10,6 +10,7 @@ import river from '../../images/waterfall.png'
 import ocean from '../../images/cyclone.png'
 import { toggleAddLocation } from '../../actions'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 
 
@@ -51,3 +52,12 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlacesCard)
+
+PlacesCard.propTypes = {
+  climate: PropTypes.string,
+  name: PropTypes.string,
+  terrain: PropTypes.string,
+  toggleAddLocation: PropTypes.func,
+  diyMovie: PropTypes.object,
+  checkPlaces: PropTypes.func
+}
