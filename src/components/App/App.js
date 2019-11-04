@@ -96,5 +96,6 @@ App.propTypes = {
   setMovies: PropTypes.func,
   setPeople: PropTypes.func,
   setPlaces: PropTypes.func,
-  setVehicles: PropTypes.func
+  setVehicles: PropTypes.func,
+  hasErrored: PropTypes.func
 }
