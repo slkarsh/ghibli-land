@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VehicleCard should match the snapshot 1`] = `
+<div
+  className="vehicle-card"
+>
+  <img />
+  <h3>
+    Name: 
+    mazda
+  </h3>
+  <h4>
+    Vehicle Class: 
+    car
+  </h4>
+  <p
+    className="vehicle-description"
+  >
+    a small car
+  </p>
+  <button
+    className="vehicle-button"
+    onClick={[Function]}
+  >
+    Add To Your Plot
+  </button>
+</div>
+`;
