@@ -282,24 +282,6 @@ describe('App', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
-
-  // describe('mapDispatchToProps', () => {
-  //   it('calls dispatch with a setMovies action when ', )
-  // })
 })
 
 
-// describe('mapDispatchToProps', () => {
-//   it.skip('calls dispatch with an loginUser action when button is clicked', () => {
-//     // Setup
-//     const mockDispatch = jest.fn();
-//     const actionToDispatch = loginUser({ name: '', id: '', isSignedIn: false })
-
-//     // Execution
-//     // const mappedProps = mapDispatchToProps(mockDispatch);
-//     wrapper.find('button').at(0).simulate('click');
-
-//     // Expectaion
-//     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-//   });
-// });
