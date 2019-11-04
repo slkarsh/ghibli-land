@@ -49,7 +49,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterCard)
 
 CharacterCard.propTypes = {
-  diyMovie: PropTypes.obj,
+  diyMovie: PropTypes.object,
   toggleAddCharacter: PropTypes.func,
   name: PropTypes.string,
   age: PropTypes.number,

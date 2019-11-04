@@ -94,7 +94,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserForm)
 UserForm.propTypes = {
   title: PropTypes.string,
   plot: PropTypes.string,
-  score: PropTypes.null,
   diyMovie: PropTypes.object,
   addTitleAndPlot: PropTypes.func,
   submitForm: PropTypes.func,

@@ -9,7 +9,6 @@ export const fetchFilms = async () => {
     const setId = index + 1
     return { title, description, release_date, rt_score, setId } 
   })
-  console.log('it worked', updatedData)
   return updatedData
 }
 
@@ -32,6 +31,7 @@ export const getPeople = () => {
 export const fetchSpecies = async (speciesUrl) => {
   const response = await fetch(speciesUrl)
   const species = await response.json()
+  console.log('species', species)
   return species.name
   // return name
 }
