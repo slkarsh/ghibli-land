@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacesCard should match the snapshot 1`] = `
+<section
+  className="places-card"
+>
+  <div
+    className="place-header-info"
+  >
+    <h3
+      className="place-name"
+    >
+      antarctica
+    </h3>
+    <img
+      className="place-icon"
+    />
+    <button
+      className="place-button"
+      onClick={[Function]}
+    >
+      Add To Your Plot
+    </button>
+  </div>
+  <div
+    className="place-details"
+  >
+    <h4>
+      Climate: 
+      cold
+    </h4>
+    <h4>
+      Terrain: 
+      icy
+    </h4>
+  </div>
+</section>
+`;

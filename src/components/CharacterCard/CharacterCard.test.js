@@ -19,7 +19,7 @@ describe('CharacterCard', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
-
+  //for mapStateToProps
   it('should return an object with an array of characters, locations, and vehicles', () => {
     const mockState = {
       diyMovie: {
