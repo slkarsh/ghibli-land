@@ -46,3 +46,12 @@ export const toggleAddVehicle = vehicle => {
     vehicle
   })
 }
+
+export const addTitleAndPlot = ({ title, plot, score }) => {
+  return ({
+    type: 'ADD_TITLE_AND_PLOT',
+    title,
+    plot,
+    score
+  })
+}

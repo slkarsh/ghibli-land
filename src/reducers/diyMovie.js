@@ -3,7 +3,8 @@ const initialState = {
   locations: [],
   vehicles: [],
   title: '',
-  plot: ''
+  plot: '',
+  score: null
 }
 
 export const diyMovie = (state = initialState, action) => {
@@ -61,6 +62,13 @@ export const diyMovie = (state = initialState, action) => {
           ...state,
           vehicles: [...newVehiclesState]
         }
+      }
+    case 'ADD_TITLE_AND_PLOT':
+      return {
+        ...state,
+        title: action.title,
+        plot: action.plot,
+        score: action.score
       }
     default:
       return state

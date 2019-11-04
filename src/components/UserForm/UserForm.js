@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import './UserForm.scss'
+import { connect } from 'react-redux'
+import { addTitleAndPlot } from '../../actions'
 
 class UserForm extends Component {
   constructor() {
     super();
     this.state = {
       title: '',
-      plot: ''
+      plot: '',
+      score: null
     }
   }
   
@@ -14,6 +17,30 @@ class UserForm extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  submitForm = e => {
+    const { title, plot } = this.state
+    const { diyMovie, addTitleAndPlot } = this.props
+    console.log('made it to submit form')
+    if (title === '' || plot === '' || diyMovie.characters.length === 0 || diyMovie.locations.length === 0 || diyMovie.vehicles.length === 0) {
+      e.preventDefault()
+      this.setState({score: 0})
+      console.log('0', this.state.score)
+    }
+    else {
+      console.log('helloooo')
+      this.getScore()
+      addTitleAndPlot(this.state)
+    }
+  }
+
+  getScore = () => {
+    console.log('get score was called')
+    let randomScore =  Math.floor((Math.random() * 10))
+    console.log('random score', randomScore)
+    this.setState({score: randomScore})
+    return randomScore
   }
 
   render() {
@@ -37,11 +64,18 @@ class UserForm extends Component {
             className='plot-input'
            />
         </form>
+        <button onClick={(e) => this.submitForm(e)}>See Your Rotten Tomatoes Score!</button>
       </section>
     )
   }
 }
 
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
 
+const mapDispatchToProps = dispatch => ({
+  addTitleAndPlot: (inputInfo) => dispatch(addTitleAndPlot(inputInfo))
+})
 
-export default UserForm
+export default connect(mapStateToProps, mapDispatchToProps)(UserForm)
