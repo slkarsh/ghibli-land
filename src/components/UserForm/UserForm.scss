@@ -12,12 +12,24 @@
 .title-input {
   height: 65px;
   margin-bottom: 20px;
-  fon-size: 1em;
+  font-size: 1em;
 }
 
 .plot-input {
   height: 350px;
   overflow: scroll;
-
+  font-size: 1em;
 }
 
+.submit-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  margin: 10px auto;
+}
+
+.movie-score {
+  font-size: 2em;
+  margin: auto;
+  text-align: center;
+}

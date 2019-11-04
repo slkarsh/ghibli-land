@@ -37,10 +37,18 @@ class UserForm extends Component {
 
   getScore = () => {
     console.log('get score was called')
-    let randomScore =  Math.floor((Math.random() * 10))
+    let randomScore =  Math.floor((Math.random() * 50))
     console.log('random score', randomScore)
     this.setState({score: randomScore})
     return randomScore
+  }
+
+  clearInputs = () => {
+    this.setState({
+      title: '',
+      plot: '',
+      score: null
+    })
   }
 
   render() {
@@ -64,7 +72,9 @@ class UserForm extends Component {
             className='plot-input'
            />
         </form>
-        <button onClick={(e) => this.submitForm(e)}>See Your Rotten Tomatoes Score!</button>
+        <button className='submit-button' onClick={(e) => this.submitForm(e)}>See Your Rotten Tomatoes Score!</button>
+        {this.state.score && <div className='movie-score'>{this.state.score}</div>}
+        {!this.state.score && <div className='movie-score'>Make sure you have added all the information to make a film!</div>}
       </section>
     )
   }
