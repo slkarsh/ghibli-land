@@ -6,7 +6,7 @@ img {
   padding: 20px;
   border-radius: 6px 6px;
   background: rgba(255, 255, 255, 0.47);
-  border: 3px solid #e91eb526;
+  // border: 3px solid #e91eb526;
   text-align: center;
 }
 
@@ -14,4 +14,13 @@ img {
   background: transparent;
   margin: 10px;
   border: none;
+  border-radius: 3px 3px 3px 3px;
+  padding: 10px;
+  font-size: 0.8em;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(194, 115, 240, 0.589);
+    transition: .4s;
+  }
 }

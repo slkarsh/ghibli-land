@@ -8,11 +8,6 @@
   font-size: 1.5em;
 }
 
-.character-info {
-  // padding: 9px;
-  // width: 25%;
-}
-
 .species-icon {
   height: 30px;
   width: 30px;
@@ -27,5 +22,13 @@
 .character-button {
   background-color: transparent;
   border: none;
+  border-radius: 3px 3px 3px 3px;
   padding: 10px;
+  font-size: 0.8em;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(101, 221, 221, 0.509);
+    transition: .4s;
+  }
 }

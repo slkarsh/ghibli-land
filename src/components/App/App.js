@@ -10,21 +10,15 @@ import PlacesContainer from '../PlacesContainer/PlacesContainer'
 import MovieContainer from '../MovieContainer/MovieContainer'
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
 import UserMovie from '../UserMovie/UserMovie'
+import HomeContainer from '../HomeContainer/HomeContainer'
 
 
 class App extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-
-  //   }
-  // }
 
   async componentDidMount() {
     const { setMovies, setPeople, setPlaces, setVehicles } = this.props
     try {
       const movies = await fetchFilms()
-      // console.log('movies', movies)
       setMovies(movies)
       const peopleInfo = await getPeople()
       setPeople(peopleInfo)
@@ -61,6 +55,7 @@ class App extends Component {
       <main className='app-whole'>
       <h1 className='app-header'>Ghibli Land!</h1>
       <NavBar />
+      <Route exact path='/' render={() => <HomeContainer />} />
       <Route path='/movies' render={() => <MovieContainer />} />
       <Route path='/characters' render={() => <CharactersContainer checkCharacters={this.checkCharacters}  />} />
       <Route path='/places' render={() => <PlacesContainer checkPlaces={this.checkPlaces} />} />
