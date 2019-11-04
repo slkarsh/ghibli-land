@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './UserForm.scss'
 import { connect } from 'react-redux'
 import { addTitleAndPlot } from '../../actions'
+import PropTypes from 'prop-types'
 
 class UserForm extends Component {
   constructor() {
@@ -89,3 +90,15 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserForm)
+
+UserForm.propTypes = {
+  title: PropTypes.string,
+  plot: PropTypes.string,
+  score: PropTypes.null,
+  diyMovie: PropTypes.object,
+  addTitleAndPlot: PropTypes.func,
+  submitForm: PropTypes.func,
+  handleChange: PropTypes.func,
+  getScore: PropTypes.func,
+  clearInputs: PropTypes.func
+}

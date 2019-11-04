@@ -7,6 +7,7 @@ import totoro from '../../images/totoro-small.png'
 import cat from '../../images/cat-small.png'
 import { toggleAddCharacter } from '../../actions'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 const icons = {
   Human: human,
@@ -46,3 +47,13 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterCard)
+
+CharacterCard.propTypes = {
+  diyMovie: PropTypes.obj,
+  toggleAddCharacter: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  gender: PropTypes.string,
+  species: PropTypes.string,
+  checkCharacters: PropTypes.func,
+}

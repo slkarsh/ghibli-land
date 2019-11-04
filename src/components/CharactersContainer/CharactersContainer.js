@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import './CharactersContainer.scss'
+import PropTypes from 'prop-types'
 
 export const CharactersContainer = ({ characters, checkCharacters }) => {
   const displayCards = characters.map((character, index) => {
@@ -27,3 +28,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(CharactersContainer)
+
+CharactersContainer.propTypes = {
+  characters: PropTypes.array,
+  checkCharacters: PropTypes.func
+}

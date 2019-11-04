@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PlacesCard from '../PlacesCard/PlacesCard'
 import './PlacesContainer.scss'
+import PropTypes from 'prop-types'
 
 export const PlacesContainer = ({ places, checkPlaces }) => {
   const displayPlaces = places.map((place, index) => {
@@ -26,3 +27,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(PlacesContainer)
+
+PlacesContainer.propTypes = {
+  places: PropTypes.array,
+  checkPlaces: PropTypes.func
+}

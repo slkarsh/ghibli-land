@@ -2,7 +2,7 @@ import React from 'react'
 import './VehicleCard.scss'
 import { toggleAddVehicle } from '../../actions'
 import { connect } from 'react-redux'
-import {IoIosStarOutline} from "react-icons/io";
+import PropTypes from 'prop-types'
 
 const images = {
   Airship: 'https://steamuserimages-a.akamaihd.net/ugc/800921761784638066/E000FAC38E199977DA4A399F9DCEAE53C4134D14/',
@@ -33,3 +33,12 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(VehicleCard)
+
+VehicleCard.propTypes = {
+  diyMovie: PropTypes.object,
+  toggleAddVehicle: PropTypes.func,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  vehicle_class: PropTypes.string,
+  checkVehicles: PropTypes.func
+}
