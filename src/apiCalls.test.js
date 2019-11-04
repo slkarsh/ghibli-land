@@ -21,7 +21,8 @@ describe('fetchFilms', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        json: Promise.resolve(mockResponse)
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
       })
     })
   })
@@ -31,7 +32,6 @@ describe('fetchFilms', () => {
       {
         description: 'a plot',
         release_date: '2001',
-        director: 'Hayao Miyazaki',
         rt_score: '95',
         title: 'a title',
         setId: 1
@@ -39,6 +39,24 @@ describe('fetchFilms', () => {
     ]
 
     expect(fetchFilms()).resolves.toEqual(expectedResult)
+  })
+
+  it('should return an error if the response is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(fetchFilms()).rejects.toEqual(Error('There was an error loading this information'))
+  })
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(fetchFilms()).rejects.toEqual(Error('fetch failed'))
   })
 })
 
@@ -61,7 +79,7 @@ describe('fetchSpecies', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        json: Promise.resolve(mockResponse)
+        json:() => Promise.resolve(mockResponse)
       })
     })
   })
@@ -73,6 +91,24 @@ describe('fetchSpecies', () => {
     ]
 
     expect(fetchSpecies()).resolves.toEqual(expectedResult)
+  })
+
+  it('should throw an error if the response is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(fetchSpecies()).rejects.toEqual(Error('There was an error loading this information'))
+  })
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(fetchSpecies()).rejects.toEqual(Error('fetch failed'))
   })
 })
 
@@ -98,7 +134,7 @@ describe('fetchLocations', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        json: Promise.resolve(mockResponse)
+        json:() => Promise.resolve(mockResponse)
       })
     })
   })
@@ -119,6 +155,24 @@ describe('fetchLocations', () => {
 
     expect(fetchLocations()).resolves.toEqual(expectedResult)
   })
+
+  it('should throw an error if the response is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(fetchLocations()).rejects.toEqual(Error('There was an error loading this information'))
+  })
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(fetchSpecies()).rejects.toEqual(Error('fetch failed'))
+  })
 })
 
 describe('fetchVehicles', () => {
@@ -138,7 +192,7 @@ describe('fetchVehicles', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        json: Promise.resolve(mockResponse)
+        json: () => Promise.resolve(mockResponse)
       })
     })
   })
@@ -158,6 +212,23 @@ describe('fetchVehicles', () => {
     ]
 
     expect(fetchVehicles()).resolves.toEqual(expected)
+  })
+
+  it('should throw an error if the response is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+    expect(fetchVehicles()).rejects.toEqual(Error('There was an error loading this information'))
+  })
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(fetchVehicles()).rejects.toEqual(Error('fetch failed'))
   })
 })
 

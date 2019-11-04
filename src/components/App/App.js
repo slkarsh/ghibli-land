@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
-import { setMovies, setPeople, setPlaces, setVehicles, addCharacter, addLocation, addVehicle } from '../../actions'
+import { setMovies, setPeople, setPlaces, setVehicles, hasErrored } from '../../actions'
 import { connect } from 'react-redux'
 import { fetchFilms, getPeople, fetchLocations, fetchVehicles } from '../../apiCalls'
 import NavBar from '../NavBar/NavBar'
@@ -29,7 +29,7 @@ export class App extends Component {
       setVehicles(vehicles)
      
     } catch (error) {
-      console.log(error)
+      hasErrored(error.message)
     }
   }
 
@@ -72,14 +72,16 @@ export class App extends Component {
 }
 
 export const mapStateToProps = state => ({
-  diyMovie: state.diyMovie
+  diyMovie: state.diyMovie,
+  error: state.error
 })
 
 export const mapDispatchToProps = dispatch => ({
   setMovies: movies => dispatch( setMovies(movies) ),
   setPeople: people => dispatch( setPeople(people) ),
   setPlaces: places => dispatch( setPlaces(places) ),
-  setVehicles: vehicles => dispatch( setVehicles(vehicles) )
+  setVehicles: vehicles => dispatch( setVehicles(vehicles) ),
+  hasErrored: error => dispatch( hasErrored(error) )
 })
 
 
