@@ -11,20 +11,25 @@ const images = {
 
 }
 
-export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle, index }) => {
+export const VehicleCard = ({ name, description, vehicle_class, toggleAddVehicle, checkVehicles }) => {
+  const buttonHandler = checkVehicles(name) ? 'Remove From Your Plot' : 'Add To Your Plot'
   return (
     <div className='vehicle-card'>
       <img src={images[vehicle_class]} />
       <h3>Name: {name}</h3>
       <h4>Vehicle Class: {vehicle_class}</h4>
       <p className='vehicle-description'>{description}</p>
-      <button onClick={() => toggleAddVehicle({ name, description, vehicle_class})}><IoIosStarOutline /></button>
+      <button className='vehicle-button' onClick={() => toggleAddVehicle({ name, description, vehicle_class})}>{buttonHandler}</button>
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
 
 const mapDispatchToProps = dispatch => ({
   toggleAddVehicle: vehicle => dispatch( toggleAddVehicle(vehicle) )
 })
 
-export default connect(null, mapDispatchToProps)(VehicleCard)
+export default connect(mapStateToProps, mapDispatchToProps)(VehicleCard)

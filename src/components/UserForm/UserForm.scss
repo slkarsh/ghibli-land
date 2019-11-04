@@ -1,0 +1,23 @@
+.form-section {
+  margin: auto;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+}
+
+.title-input {
+  height: 65px;
+  margin-bottom: 20px;
+  fon-size: 1em;
+}
+
+.plot-input {
+  height: 350px;
+  overflow: scroll;
+
+}
+

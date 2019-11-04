@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './UserForm.scss'
 
 class UserForm extends Component {
   constructor() {
@@ -24,12 +25,16 @@ class UserForm extends Component {
             value={this.state.title}
             onChange={this.handleChange}
             placeholder='Name your movie'
+            className='title-input'
            />
-           <input
+           <textarea
+            rows='30'
+            columns='100'
             name='plot'
             value={this.state.plot}
             onChange={this.handleChange}
             placeholder='Describe the plot'
+            className='plot-input'
            />
         </form>
       </section>

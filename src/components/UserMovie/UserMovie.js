@@ -5,6 +5,7 @@ import CharacterCard from '../CharacterCard/CharacterCard'
 import VehicleCard from '../VehicleCard/VehicleCard'
 import PlacesCard from '../PlacesCard/PlacesCard'
 import { toggleAddCharacter, toggleAddLocation, toggleAddVehicle } from '../../actions'
+import './UserMovie.scss'
 
 export const UserMovie = ({ diyMovie, checkCharacters, checkPlaces, checkVehicles }) => {
   const displayLocations = diyMovie.locations.map(location => {
@@ -40,14 +41,18 @@ export const UserMovie = ({ diyMovie, checkCharacters, checkPlaces, checkVehicle
         <UserForm />
       </section>
       <section className='user-cards-container'>
-        <h4 className='characters'>Starring: </h4> 
-          {displayCharacters}
-        <br />
-        <h4 className='locations'>At: </h4>
-          {displayLocations}
-        <br />
+        <div className='user-characters'>
+          <h4 className='characters'>Starring: </h4> 
+            {displayCharacters}
+        </div>
+        <div className='user-locations'>
+          <h4 className='locations'>At: </h4>
+            {displayLocations}
+        </div>
+       <div className='user-vehicles'>
         <h4 className='vehicles'>Featuring: </h4>
           {displayVehicles}
+       </div>
       </section>
     </main>
 
