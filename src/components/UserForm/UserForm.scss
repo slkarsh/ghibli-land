@@ -26,6 +26,13 @@
   border: none;
   font-size: 1.2em;
   margin: 10px auto;
+  border-radius: 5px 5px 5px 5px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(240, 115, 167, 0.589);
+    transition: .4s;
+  }
 }
 
 .movie-score {
