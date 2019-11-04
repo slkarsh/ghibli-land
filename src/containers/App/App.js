@@ -4,13 +4,13 @@ import { Route } from 'react-router-dom';
 import { setMovies, setPeople, setPlaces, setVehicles, hasErrored } from '../../actions'
 import { connect } from 'react-redux'
 import { fetchFilms, getPeople, fetchLocations, fetchVehicles } from '../../apiCalls'
-import NavBar from '../NavBar/NavBar'
+import NavBar from '../../components/NavBar/NavBar'
 import CharactersContainer from '../CharactersContainer/CharactersContainer'
 import PlacesContainer from '../PlacesContainer/PlacesContainer'
 import MovieContainer from '../MovieContainer/MovieContainer'
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer'
 import UserMovie from '../UserMovie/UserMovie'
-import HomeContainer from '../HomeContainer/HomeContainer'
+import HomeContainer from '../../components/HomeContainer/HomeContainer'
 import PropTypes from 'prop-types'
 
 
