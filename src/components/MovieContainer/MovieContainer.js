@@ -20,7 +20,7 @@ export const MovieContainer = ({ movies }) => {
   )
 }
 
-const mapStateToProps = state => ({
+ export const mapStateToProps = state => ({
   movies: state.movies
 })
 

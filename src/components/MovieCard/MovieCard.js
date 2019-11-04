@@ -23,8 +23,8 @@ export const MovieCard = ({ title, description, release_date, rt_score, setId}) 
       />
       <h3>{title}</h3>
       <p className='description'>{description}</p>
-      <p className='date'>{release_date}</p>
-      <p className='score'>{rt_score}</p>
+      <p className='date'>Released in: {release_date}</p>
+      <p className='score'>Rotten Tomatoes: {rt_score}%</p>
     </section>
   )
 }

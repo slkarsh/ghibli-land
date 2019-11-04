@@ -1,0 +1,42 @@
+.form-section {
+  margin: auto;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+}
+
+.title-input {
+  height: 65px;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+.plot-input {
+  height: 350px;
+  overflow: scroll;
+  font-size: 1em;
+}
+
+.submit-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  margin: 10px auto;
+  border-radius: 5px 5px 5px 5px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(240, 115, 167, 0.589);
+    transition: .4s;
+  }
+}
+
+.movie-score {
+  font-size: 2em;
+  margin: auto;
+  text-align: center;
+}

@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import PlacesCard from '../PlacesCard/PlacesCard'
 import './PlacesContainer.scss'
 
-export const PlacesContainer = ({ places }) => {
+export const PlacesContainer = ({ places, checkPlaces }) => {
   const displayPlaces = places.map((place, index) => {
     return (
       <PlacesCard 
         {...place}
         key={index}
+        checkPlaces={checkPlaces}
       />
     )
   })
@@ -20,7 +21,7 @@ export const PlacesContainer = ({ places }) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   places: state.places
 })
 

@@ -5,6 +5,8 @@ import deer from '../../images/deer-small.png'
 import god from '../../images/god-small.png'
 import totoro from '../../images/totoro-small.png'
 import cat from '../../images/cat-small.png'
+import { toggleAddCharacter } from '../../actions'
+import { connect } from 'react-redux'
 
 const icons = {
   Human: human,
@@ -14,17 +16,18 @@ const icons = {
   Cat: cat
 }
 
-export const CharacterCard = ({ name, age, gender, species }) => {
+export const CharacterCard = ({ name, age, gender, species, toggleAddCharacter, checkCharacters }) => {
+  const buttonHandler = checkCharacters(name) ? 'Remove From Your Cast' : 'Add To Your Cast'
   return (
     <section className='character-card'>
       <div className='character-id-info'>
         <h3 className='character-name'>{name}</h3>
-        <br />
         <img className='species-icon' src={icons[species]}/>
+        <button className='character-button' onClick={() => toggleAddCharacter({ name, age, gender, species })}>{buttonHandler}</button>
       </div>
       <div className='character-info'>
-        <h4>Age: {age}</h4>
-        <h4>Gender: {gender}</h4>
+        <h5>Age: {age}</h5>
+        <h5>Gender: {gender}</h5>
         <p className='species-info'>
           Species: {species}
         </p>
@@ -34,4 +37,12 @@ export const CharacterCard = ({ name, age, gender, species }) => {
   )
 }
 
-export default CharacterCard
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
+
+const mapDispatchToProps = dispatch => ({
+  toggleAddCharacter: character => dispatch ( toggleAddCharacter(character) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterCard)

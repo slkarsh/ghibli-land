@@ -49,6 +49,7 @@ export const fetchLocations = async () => {
 export const fetchVehicles = async () => {
   const response = await fetch('https://ghibliapi.herokuapp.com/vehicles')
   const vehicles = await response.json()
+  console.log('vehicles', vehicles)
   return vehicles
 }
 

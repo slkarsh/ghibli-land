@@ -1,16 +1,35 @@
 .places-card {
-  border: 5px solid black;
-  display: flex;
-  width: 290px;
+ text-align: center;
+ background-color: rgba(255, 255, 255, 0.35);
+ border-radius: 6px 6px 6px 6px;
+ border-color: rgba(127, 192, 255, 0.54)
 }
 
-.place-name {
-  padding: 18px;
-  border-right: 1px solid black;
-  font-size: 1.3em;
-  inline-size: min-content;
+.place-header-info {
+  display: flex;
+  flex-direction: column
 }
 
 .place-details {
   padding: 9px;
+}
+
+.place-icon {
+  height: 30px;
+  width: 30px;
+  margin: auto;
+}
+
+.place-button {
+  background: transparent;
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  font-size: 0.8em;
+  margin: 10px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(241, 155, 223, 0.596);
+    transition: .4s;
+  }
 }

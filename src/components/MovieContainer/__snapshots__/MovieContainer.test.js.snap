@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieContainer MovieContainer component should match the snapshot 1`] = `
+<main
+  className="movie-container"
+>
+  <MovieCard
+    description="it is riveting"
+    key="0"
+    release_date="2019"
+    rt_score={22}
+    title="A Film"
+  />
+  <MovieCard
+    description="it is not as riveting"
+    key="1"
+    release_date="2018"
+    rt_score={11}
+    title="A Movie"
+  />
+</main>
+`;

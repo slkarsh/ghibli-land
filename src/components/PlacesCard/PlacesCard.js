@@ -8,6 +8,8 @@ import forest from '../../images/trees.png'
 import city from '../../images/cityscape.png'
 import river from '../../images/waterfall.png'
 import ocean from '../../images/cyclone.png'
+import { toggleAddLocation } from '../../actions'
+import { connect } from 'react-redux'
 
 
 
@@ -23,17 +25,29 @@ const placeIcons = {
   Ocean: ocean
 }
 
-export const PlacesCard = ({ climate, name, terrain }) => {
+export const PlacesCard = ({ climate, name, terrain, toggleAddLocation, checkPlaces }) => {
+  const buttonHandler = checkPlaces(name) ? 'Remove From Your Plot' : 'Add To Your Plot'
   return (
     <section className='places-card'>
-      <h3 className='place-name'>Name: {name}</h3>
+      <div className='place-header-info'>
+        <h3 className='place-name'>{name}</h3>
+        <img className='place-icon' src={placeIcons[terrain]} />
+        <button className='place-button' onClick={() => toggleAddLocation({ climate, name, terrain })}>{buttonHandler}</button>
+      </div>
       <div className='place-details'>
         <h4>Climate: {climate}</h4>
         <h4>Terrain: {terrain}</h4>
-        <img src={placeIcons[terrain]} />
       </div>
     </section>
   )
 }
 
-export default PlacesCard
+const mapStateToProps = state => ({
+  diyMovie: state.diyMovie
+})
+
+const mapDispatchToProps = dispatch => ({
+  toggleAddLocation: location => dispatch( toggleAddLocation(location))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesCard)

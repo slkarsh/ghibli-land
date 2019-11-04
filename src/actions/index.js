@@ -26,9 +26,32 @@ export const setVehicles = vehicles => {
   })
 }
 
-export const addPlotCharacter = character => {
+export const toggleAddCharacter = character => {
   return ({
-    type: 'ADD_PLOT_CHARACTER',
+    type: 'TOGGLE_ADD_CHARACTER',
     character
+  })
+}
+
+export const toggleAddLocation = location => {
+  return ({
+    type: 'TOGGLE_ADD_LOCATION',
+    location
+  })
+}
+
+export const toggleAddVehicle = vehicle => {
+  return ({
+    type: 'TOGGLE_ADD_VEHICLE',
+    vehicle
+  })
+}
+
+export const addTitleAndPlot = ({ title, plot, score }) => {
+  return ({
+    type: 'ADD_TITLE_AND_PLOT',
+    title,
+    plot,
+    score
   })
 }

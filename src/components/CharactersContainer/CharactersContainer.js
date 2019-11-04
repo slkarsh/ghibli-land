@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import CharacterCard from '../CharacterCard/CharacterCard'
 import './CharactersContainer.scss'
 
-export const CharactersContainer = ({ characters }) => {
+export const CharactersContainer = ({ characters, checkCharacters }) => {
   const displayCards = characters.map((character, index) => {
     return (
       <CharacterCard
         {...character}
         key={index}
         className='character'
+        checkCharacters={checkCharacters}
        />
     )
   })
@@ -21,7 +22,7 @@ export const CharactersContainer = ({ characters }) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   characters: state.characters
 })
 

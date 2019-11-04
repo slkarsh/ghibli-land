@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VehiclesContainer VehiclesContainer component should match the snapshot 1`] = `
+<section
+  className="vehicles-container"
+>
+  <Connect(VehicleCard)
+    checkVehicles={[MockFunction]}
+    description="it flies"
+    key="0"
+    name="airplane"
+  />
+  <Connect(VehicleCard)
+    checkVehicles={[MockFunction]}
+    description="it floats"
+    key="1"
+    name="boat"
+  />
+</section>
+`;
