@@ -15,8 +15,6 @@ describe('addTitleAndPlot actions', () => {
       score
     }
 
-    console.log(inputObject)
-
     expect(actions.addTitleAndPlot(inputObject)).toEqual(expectedAction)
   })
 })

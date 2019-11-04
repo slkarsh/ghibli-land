@@ -37,7 +37,6 @@ export const fetchSpecies = async (speciesUrl) => {
     throw new Error('There was an error loading this information')
   }
   const species = await response.json()
-  console.log('species', species)
   return species.name
   // return name
 }
@@ -51,7 +50,7 @@ export const fetchLocations = async () => {
   const filteredData = data.filter(location => {
     return location.climate !== 'TODO'
   })
-  console.log('locations', filteredData)
+  
   return filteredData
 }
 
@@ -61,7 +60,7 @@ export const fetchVehicles = async () => {
     throw new Error('There was an error loading this information')
   }
   const vehicles = await response.json()
-  console.log('vehicles', vehicles)
+  
   return vehicles
 }
 
