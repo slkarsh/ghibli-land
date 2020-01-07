@@ -12,7 +12,7 @@ By:
 
 ## Built With
 - React Router
-- JavaScript
+- React
 - Redux
 - HTML5
 - CSS3
