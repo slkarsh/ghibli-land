@@ -11,21 +11,21 @@ By:
 * [Why?](Why?)
 
 ## Built With
+- ReactJS
 - React Router
-- React
 - Redux
 - HTML5
-- CSS3
+- SCSS
 - TDD (Jest, Enzyme)
 - Fetch API - https://ghibliapi.herokuapp.com/
 ## Screenshots
-<img width="1405" alt="Screen Shot 2019-11-04 at 3 56 40 PM" src="https://user-images.githubusercontent.com/46407593/68165105-bd801b00-ff1b-11e9-9da3-1f1bb1d963cd.png">
+<img width="1387" alt="Screen Shot 2020-01-06 at 9 23 16 PM" src="https://user-images.githubusercontent.com/46407593/71868380-21b18d80-30cb-11ea-8b10-72abd02cb694.png">
 
-<img width="1412" alt="Screen Shot 2019-11-04 at 3 42 01 PM" src="https://user-images.githubusercontent.com/46407593/68164983-7134db00-ff1b-11e9-94c6-ca2ec2fdea3e.png">
+<img width="1383" alt="Screen Shot 2020-01-06 at 9 23 31 PM" src="https://user-images.githubusercontent.com/46407593/71868399-31c96d00-30cb-11ea-933f-c43bce3414cb.png">
 
-<img width="1417" alt="Screen Shot 2019-11-04 at 3 41 41 PM" src="https://user-images.githubusercontent.com/46407593/68165010-84e04180-ff1b-11e9-8054-3caaf02bd906.png">
+<img width="1385" alt="Screen Shot 2020-01-06 at 9 23 48 PM" src="https://user-images.githubusercontent.com/46407593/71868445-62a9a200-30cb-11ea-9811-b6236a534616.png">
 
-<img width="1417" alt="Screen Shot 2019-11-04 at 3 36 11 PM" src="https://user-images.githubusercontent.com/46407593/68165042-9590b780-ff1b-11e9-8484-7818d087aef4.png">
+<img width="1384" alt="Screen Shot 2020-01-06 at 9 25 21 PM" src="https://user-images.githubusercontent.com/46407593/71868428-4f96d200-30cb-11ea-9093-5a0d9429a255.png">
 
 ## Features
 - [x] Built on React
