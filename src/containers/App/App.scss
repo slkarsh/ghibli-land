@@ -9,24 +9,10 @@
   height: 40vmin;
 }
 
-// .App-header {
-//   background-color: #d3d3d3;
-//   // background-image: linear-gradient(315deg, #d3d3d3 0%, #7f8c8d 74%);
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
 .app-whole {
   height: 100vh;
   width: 100%;
-  background-color: #d3d3d3;
-  // background-image: linear-gradient(315deg, #d3d3d3 0%, #7f8c8d 74%);
-  background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm28-watercolor-kung-160_2.jpg?auto=format&bg=F4F4F3&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1200&s=f6c012bc06fa2fa864e1a5d5d565d6c2');
+  background: linear-gradient(to bottom, #D6A4A4, #DAE2F8);
   background-repeat:no-repeat;
   background-size: 100% 100%;  
   // background-size: 100vh;
