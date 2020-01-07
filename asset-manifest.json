@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/ghibli-land/static/css/main.cf2c8ab8.chunk.css",
+    "main.js": "/ghibli-land/static/js/main.792eb24d.chunk.js",
+    "main.js.map": "/ghibli-land/static/js/main.792eb24d.chunk.js.map",
+    "runtime-main.js": "/ghibli-land/static/js/runtime-main.b14825dd.js",
+    "runtime-main.js.map": "/ghibli-land/static/js/runtime-main.b14825dd.js.map",
+    "static/js/2.d20cd28c.chunk.js": "/ghibli-land/static/js/2.d20cd28c.chunk.js",
+    "static/js/2.d20cd28c.chunk.js.map": "/ghibli-land/static/js/2.d20cd28c.chunk.js.map",
+    "index.html": "/ghibli-land/index.html",
+    "precache-manifest.2ef9cbd2fd89e4046b58667cecc0d389.js": "/ghibli-land/precache-manifest.2ef9cbd2fd89e4046b58667cecc0d389.js",
+    "service-worker.js": "/ghibli-land/service-worker.js",
+    "static/css/main.cf2c8ab8.chunk.css.map": "/ghibli-land/static/css/main.cf2c8ab8.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b14825dd.js",
+    "static/js/2.d20cd28c.chunk.js",
+    "static/css/main.cf2c8ab8.chunk.css",
+    "static/js/main.792eb24d.chunk.js"
+  ]
+}
